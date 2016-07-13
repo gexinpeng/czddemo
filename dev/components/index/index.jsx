@@ -6,6 +6,7 @@ import React from 'react'
 import UEditor from '../ueditor/ueditor.jsx'
 import Panel from '../panel/panel.jsx'
 import Store from '../../stores/store'
+import objectAssign from 'object-assign'
 
 class Index extends React.Component {
 
@@ -17,7 +18,7 @@ class Index extends React.Component {
     }
 
     getAppStates() {
-        return Object.assign({}, Store.get())
+        return objectAssign({}, Store.get())
     }
 
     componentDidMount() {
@@ -55,12 +56,6 @@ class Index extends React.Component {
                     show={this.state.showPanel}
                 />
                 {globalInsert}
-                <div className="edui-default">
-                    <div className="edui-toolbar">
-                        <div className="emotion" id="emotion"></div>
-                        <div className="simpleupload" id="simpleupload"></div>
-                    </div>
-                </div>
             </div>
         )
     }
